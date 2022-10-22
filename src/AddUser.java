@@ -47,9 +47,9 @@ public class AddUser {
                     PreparedStatement pst = con.prepareStatement("insert into user(fname,lname,age,email,active)value(?,?,?,?,?)");
                     pst.setString(1, fname);
                     pst.setString(2, lname);
-                    pst.setString(3, String.valueOf(age));
+                    pst.setInt(3, age);
                     pst.setString(4, email);
-                    pst.setString(5, String.valueOf(active));
+                    pst.setBoolean(5, active);
                     pst.executeUpdate();
                     JOptionPane.showMessageDialog(null, "Recorde Successfully added");
                 }
